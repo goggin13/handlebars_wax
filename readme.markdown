@@ -57,9 +57,13 @@ or
 </script>
 ```
 
+For more examples, check out the [dummy app](https://github.com/goggin13/handlebars_wax/tree/master/spec/dummy).  
+
+### Todo
+* Server side rendering of a template, not a partial (see `spec/dummy/app/controllers/home_controller.rb`).  
+
 ### Acknowledgments
 Built off of [handlebars_assets](https://github.com/leshill/handlebars_assets) 
 and [handlebars.rb](https://github.com/cowboyd/handlebars.rb) 
 by [Becky](github.com/becarella) and [Matt](github.com/goggin13).
-
 
