@@ -1,5 +1,12 @@
 ## Handlebars_Wax
 
+A gem to simplify use of Handlebars templates both server side and client side.
+
+Features:
+* Sprockets compilation of handlebars templates  
+* Register templates as partials for use in Javascript  
+* Server side rendering  
+
 ### Setup
 
 Add handlebars_wax to your gemfile
