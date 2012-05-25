@@ -49,3 +49,10 @@ or
   $('#template').html(JST['home/template']({data: "hello"}));
 </script>
 ```
+
+### Acknowledgments
+Built off of [handlebars_assets](https://github.com/leshill/handlebars_assets) 
+and [handlebars](https://github.com/cowboyd/handlebars.rb) 
+by [Becky](github.com/becarella) and [Matt](github.com/goggin13).
+
+
