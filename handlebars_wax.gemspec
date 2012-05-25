@@ -7,11 +7,18 @@ require "handlebars_wax/version"
 Gem::Specification.new do |s|
   s.name        = "handlebars_wax"
   s.version     = HandlebarsWax::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of HandlebarsWax."
-  s.description = "TODO: Description of HandlebarsWax."
+  s.authors     = ["Becky Carella", "Matt Goggin"]
+  s.email       = ["becarella@gmail.com", "goggin13@gmail.com"]
+  s.homepage    = "https://github.com/goggin13/handlebars_wax"
+  s.summary     = "a wrapper for the handlebars_assets and handlebars.rb gems"
+  s.description = <<-EOF
+    A gem to simplify use of Handlebars templates both server side and client side.
+
+    Features:
+    * Sprockets compilation of handlebars templates  
+    * Register templates as partials for use in Javascript  
+    * Server side rendering
+  EOF
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 

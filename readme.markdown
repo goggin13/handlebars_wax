@@ -18,6 +18,19 @@ Create a directory for your handlebars templates.
 List the directory in application.rb
 `paths["app/views"] << "app/assets/templates"`  
 
+Download [handlebars.js](https://github.com/wycats/handlebars.js/downloads) and include it with
+the rest of your javascript. 
+(e.g., in application.js) 
+```
+...
+
+//= require jquery
+//= require jquery_ujs
+//= require handlebars.runtime
+
+...
+```  
+
 ### Use
 
 Create your handlebars templates and partials in your templates directory.
@@ -61,6 +74,7 @@ For more examples, check out the [dummy app](https://github.com/goggin13/handleb
 
 ### Todo
 * Server side rendering of a template, not a partial (see `spec/dummy/app/controllers/home_controller.rb`).  
+* Don't make users manually include handlebars.runtime  
 
 ### Acknowledgments
 Built off of [handlebars_assets](https://github.com/leshill/handlebars_assets) 
