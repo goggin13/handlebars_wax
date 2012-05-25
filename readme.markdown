@@ -10,8 +10,10 @@ Features:
 ### Setup
 
 Add handlebars_wax to your gemfile, as well as our modified handlebars_asssets repo.
-`gem 'handlebars_wax', :git => 'git@github.com:goggin13/handlebars_wax.git'` 
-`gem 'handlebars_assets', :git => 'git@github.com:goggin13/handlebars_assets.git'` 
+```
+gem 'handlebars_wax', :git => 'git@github.com:goggin13/handlebars_wax.git'
+gem 'handlebars_assets', :git => 'git@github.com:goggin13/handlebars_assets.git'
+```
 
 Create a directory for your handlebars templates.
 `mkdir app/assets/templates`  
