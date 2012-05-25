@@ -16,13 +16,14 @@ List the directory in application.rb
 Create your handlebars templates and partials in your templates directory.
 You may wish to nest them by controller in the same way Rails manages the `views`
 directory. For the Home controller, ours looks like:
-* app  
-  * assets  
-    * templates
-      * home
-        * template.jst.hbs
-        * _partial.jst.hbs
-
+```
+/app  
+  /assets  
+    /templates
+      /home
+        template.jst.hbs
+        _partial.jst.hbs
+```
 From your erb templates, you can render partials as 
 ```
 <div>
