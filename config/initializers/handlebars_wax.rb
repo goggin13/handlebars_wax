@@ -22,7 +22,7 @@ end
 module HBSTemplateHandler
   def self.call(template)
     <<-TEMPLATE
-    template = HANDLEBARS.compile('#{template.source}');
+    template = HandlebarsConfig::HANDLEBARS.compile('#{template.source}');
     vars = {}
     partial_renderer = @view_renderer.send(:_partial_renderer)
     vars.merge!(@_assigns)
