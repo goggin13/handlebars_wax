@@ -2,11 +2,11 @@
 require 'handlebars'
 
 class HandlebarsConfig
+  HANDLEBARS = Handlebars::Context.new
 
   def self.register_partial(partial_name, file_name)
-    handlebars = Handlebars::Context.new
-    compiled = handlebars.compile(File.open(file_name).read)
-    handlebars.handlebars.registerPartial(partial_name, compiled)
+    compiled = HANDLEBARS.compile(File.open(file_name).read)
+    HANDLEBARS.handlebars.registerPartial(partial_name, compiled)
   end
 
   def self.register_partials
@@ -22,8 +22,7 @@ end
 module HBSTemplateHandler
   def self.call(template)
     <<-TEMPLATE
-    handlebars = Handlebars::Context.new
-    template = handlebars.compile('#{template.source}');
+    template = HANDLEBARS.compile('#{template.source}');
     vars = {}
     partial_renderer = @view_renderer.send(:_partial_renderer)
     vars.merge!(@_assigns)
