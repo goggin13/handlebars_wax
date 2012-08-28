@@ -2,7 +2,23 @@
 require 'handlebars'
 
 class HandlebarsConfig
-  HANDLEBARS = Handlebars::Context.new
+  HANDLEBARS = Handlebars::Context.new.tap do |context|
+    context['rails'] = {}
+    context.partial_missing do |name|
+      name = name.gsub('.', '/')
+      lookup_context = context['rails']['view'].lookup_context
+      prefixes = lookup_context.prefixes.dup
+      prefixes.push ''
+      partial = lookup_context.find(name, prefixes, true)
+      lambda do |this, context|
+        if partial.handler == self
+          handlebars.compile(partial.source).call(context)
+        else
+          context['rails']['view'].render :partial => name, :locals => context
+        end
+      end
+    end
+  end
 
   def self.register_partial(partial_name, file_name)
     compiled = HANDLEBARS.compile(File.open(file_name).read)
@@ -28,8 +44,22 @@ module HBSTemplateHandler
     vars.merge!(@_assigns)
     vars.merge!(partial_renderer.instance_variable_get('@locals'))
     vars.merge!(partial_renderer.instance_variable_get('@options')[:context] || {})
-    template.call(vars.as_json).html_safe
+    HBSTemplateHandler.with_view(self) do
+      template.call(vars).force_encoding(Encoding.default_external).html_safe
+    end
     TEMPLATE
+  end
+
+  def self.with_view(view)
+    original_view = data['view']
+    data['view'] = view
+    yield
+  ensure
+    data['view'] = original_view
+  end
+
+  def self.data
+    HandlebarsConfig::HANDLEBARS['rails']
   end
 end
 

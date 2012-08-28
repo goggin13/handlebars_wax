@@ -23,7 +23,9 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "readme.markdown"]
 
   s.add_dependency "rails", "~> 3.1.4"
-  s.add_dependency "handlebars"
+
+  s.add_dependency 'libv8', '~> 3.11.8' # only for the beta handlebars
+  s.add_dependency "handlebars", "~> 0.3.2beta3"
 
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "capybara"
