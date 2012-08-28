@@ -15,17 +15,17 @@ Gem::Specification.new do |s|
     A gem to simplify use of Handlebars templates both server side and client side.
 
     Features:
-    * Sprockets compilation of handlebars templates  
-    * Register templates as partials for use in Javascript  
+    * Sprockets compilation of handlebars templates
+    * Register templates as partials for use in Javascript
     * Server side rendering
   EOF
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "readme.markdown"]
+  s.files = Dir["{app,config,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "readme.markdown"]
 
   s.add_dependency "rails", "~> 3.1.4"
   s.add_dependency "handlebars"
-  
+
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "capybara"
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "selenium-webdriver", "~> 2.25.0"
 end

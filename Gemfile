@@ -17,4 +17,4 @@ gem "jquery-rails"
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'handlebars_assets', :git => 'git@github.com:goggin13/handlebars_assets.git'
-#gem 'handlebars_assets', :path => '../local_gems/handlebars_assets'
+# gem 'handlebars_assets', :path => '../local_gems/handlebars_assets'
