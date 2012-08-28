@@ -1,17 +1,18 @@
+GIT
+  remote: git@github.com:goggin13/handlebars_assets.git
+  revision: d6a500a6c80cda4f990df68cc41d0298f8ebfa61
+  specs:
+    handlebars_assets (0.4.1)
+      execjs (>= 1.2.9)
+      sprockets (>= 2.0.3)
+      tilt
+
 PATH
   remote: .
   specs:
     handlebars_wax (0.0.1)
       hbs
       rails (~> 3.1.4)
-
-PATH
-  remote: ../local_gems/handlebars_assets
-  specs:
-    handlebars_assets (0.4.1)
-      execjs (>= 1.2.9)
-      sprockets (>= 2.0.3)
-      tilt
 
 GEM
   remote: http://rubygems.org/
