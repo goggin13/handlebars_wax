@@ -15,8 +15,8 @@ Gem::Specification.new do |s|
     A gem to simplify use of Handlebars templates both server side and client side.
 
     Features:
-    * Sprockets compilation of handlebars templates  
-    * Register templates as partials for use in Javascript  
+    * Sprockets compilation of handlebars templates
+    * Register templates as partials for use in Javascript
     * Server side rendering
   EOF
 
@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 3.1.4"
   s.add_dependency "hbs"
-  
+
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "capybara"
   s.add_development_dependency "sqlite3"
