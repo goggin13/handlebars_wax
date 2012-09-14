@@ -11,16 +11,18 @@ class HandlebarsConfig
       prefixes.push ''
       partial = lookup_context.find(name, prefixes, true)
       lambda do |this, context|
-        if partial.handler == self
-          handlebars.compile(partial.source).call(context)
-        else
-          context['rails']['view'].render :partial => name, :locals => context
-        end
+        # if partial.handler == self
+          HANDLEBARS.compile(partial.source).call(context)
+        # else
+        #   context['rails']['view'].render :partial => name, :locals => context
+        # end
       end
     end
   end
 
   def self.register_partial(partial_name, file_name)
+    puts "NOT REGISTERING PARTIAL:  letting partial_missing sort it out"
+    return
     compiled = HANDLEBARS.compile(File.open(file_name).read)
     HANDLEBARS.handlebars.registerPartial(partial_name, compiled)
   end
