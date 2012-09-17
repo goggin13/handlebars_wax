@@ -8,14 +8,15 @@ class HandlebarsConfig
       name = name.gsub('.', '/')
       lookup_context = context['rails']['view'].lookup_context
       prefixes = lookup_context.prefixes.dup
+      prefixes += prefixes.map{|p| p.split('/')[1..-1].join('/')}.uniq # remove engine prefixes
       prefixes.push ''
       partial = lookup_context.find(name, prefixes, true)
       lambda do |this, context|
-        # if partial.handler == self
+        if partial.handler == HBSTemplateHandler
           HANDLEBARS.compile(partial.source).call(context)
-        # else
-        #   context['rails']['view'].render :partial => name, :locals => context
-        # end
+        else
+          context['rails']['view'].render :partial => name, :locals => context
+        end
       end
     end
   end
